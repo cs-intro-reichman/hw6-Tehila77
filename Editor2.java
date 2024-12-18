@@ -19,10 +19,11 @@ public class Editor2 {
 		Color[][] imageIn = Runigram.read(fileName);	
 		Color[][] imageOut = changeSizeImg(imageIn, width, height);
 		Runigram.setCanvas(imageIn);
-		Runigram.display(imageIn);
-		StdDraw.pause(3000); 
+		Runigram.display(imageIn); 
+		Runigram.setCanvas(imageOut);
 		Runigram.display(imageOut);
-		}
+	
+	}
 	}
 	public static Color[][]	changeSizeImg(Color [][] arr, int newW,int newH){
 	Color[][] newImage= new Color [newW][newH];
