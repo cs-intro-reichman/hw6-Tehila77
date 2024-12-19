@@ -106,11 +106,12 @@ public class Runigram {
 	// lum = 0.299 * r + 0.587 * g + 0.114 * b, and returns a Color object consisting
 	// the three values r = lum, g = lum, b = lum.
 	private static Color luminance(Color pixel) {
-		 int newR= (int)0.0299*pixel.getRed();
-		 int newG=(int)0.587*pixel.getGreen();
-		 int newB=(int)0.114*pixel.getBlue();
-		 Color lum =new Color(newR, newG,newB);
-		return  lum;
+		 int r=pixel.getRed();
+		 int g=pixel.getGreen();
+		 int b=pixel.getBlue();
+		 int lum=(int)(0.299 * r + 0.587 * g + 0.114 * b);
+		 Color newPixel =new Color(lum,lum,lum);
+		return newPixel; 
 	}
 	
 	/**
@@ -118,14 +119,9 @@ public class Runigram {
 	 */
 	public static Color[][] grayScaled(Color[][] image) {
 		Color [][] grayVarision= new Color[image.length][image[0].length];
-		for(int i=0;i<image.length;i++){
+		for(int i=0;i<grayVarision.length;i++){
 			for (int j=0;j < image[0].length;j++){
-				int r=image[i][j].getRed();
-		        int g=image[i][j].getRed();
-				int b=image[i][j].getRed();
-			int lum=  (int) (0.299 * r + 0.587 * g + 0.114 * b);
-			Color newPixel=new Color(lum,lum,lum);
-			grayVarision[i][j]= newPixel;
+			grayVarision[i][j]= luminance(grayVarision[i][j]);
 			}	
 			}
 			return grayVarision;
