@@ -64,9 +64,9 @@ public class Runigram {
 	private static void print(Color[][] image) {
 	for(int i=0;i<image.length;i++){
 		for(int j=0;j<image[i].length;j++){
-			System.out.print(image[i][j] +" ");
+			print(image[i][j]);
 		}
-		System.err.println();
+		System.out.println();
 	}
 	}
 	 
@@ -135,8 +135,8 @@ public class Runigram {
 		int w= image.length;
 		int h=image[0].length;
 		Color [][] newImage= new Color[width][height];
-		double ratiow=w/width;
-		double ratioh=h/height;
+		double ratiow=(double)w/width;
+		double ratioh=(double)h/height;
 		for (int i = 0; i <width; i++) {
 		  for (int j = 0; j < height; j++) {
 				   int origX = (int) (i * ratiow);
