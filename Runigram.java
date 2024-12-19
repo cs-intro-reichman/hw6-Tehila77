@@ -123,7 +123,7 @@ public class Runigram {
 			for (int j=0;j <grayVarision[0].length;j++){
 			grayVarision[i][j]= luminance(image[i][j]);
 			}	
-			}
+		}
 			return grayVarision;
 		}
 	
@@ -139,8 +139,8 @@ public class Runigram {
 		double ratioh=(double)h/height;
 		for (int i = 0; i <height; i++) {
 		  for (int j = 0; j < width; j++) {
-				   int origX = (int) (i * ratiow);
-				   int origY = (int) (j * ratioh);
+				   int origX = (int) (i * ratioh);
+				   int origY = (int) (j * ratiow);
 				   newImage[i][j] = image[origX][origY];
 		 }	
 		}
