@@ -10,7 +10,36 @@ import java.awt.Color;
 public class Editor2 {
 
 	public static void main (String[] args){
-		//// Replace this comment with your code.
-		//// This function is similar to the main function of Editor1.java			
+		if(args.length!=3){
+			System.out.println("Enter the image file name, width, and height.");
+		}else{
+		String fileName = args[0];
+		int width=Integer.parseInt(args[1]);
+		int height=Integer.parseInt(args[2]);
+		Color[][] imageIn = Runigram.read(fileName);	
+		Color[][] imageOut = changeSizeImg(imageIn, width, height);
+		Runigram.setCanvas(imageIn);
+		Runigram.display(imageIn); 
+		Runigram.setCanvas(imageOut);
+		Runigram.display(imageOut);
+	
+	}
+	}
+	public static Color[][]	changeSizeImg(Color [][] arr, int newW,int newH){
+	Color[][] newImage= new Color [newW][newH];
+    double raidoW=(double)arr.length/newW;
+	double raidoH=(double)arr[0].length/newH;
+    for (int i = 0; i < newImage.length; i++) {
+	    for (int j = 0; j < newImage[0].length; j++) {
+        int x= (int)(i*raidoW );
+	    int y=(int)(j*raidoH );
+		newImage[i][j]=arr[x][y];
+        }
+	}
+	return  newImage;
 	}
 }
+
+
+
+
