@@ -141,12 +141,7 @@ public class Runigram {
 		  for (int j = 0; j < height; j++) {
 				   int origX = (int) (i * ratiow);
 				   int origY = (int) (j * ratioh);
-				   int r = image[origX][origY].getRed();
-				   int g = image[origX][origY].getGreen();
-				   int b = image[origX][origY].getBlue();
-				   Color pixel = new Color(r, g, b);
-				   newImage[i][j] = pixel;
-			
+				   newImage[i][j] = image[origX][origY];
 		 }	
 		}
 		return newImage;
