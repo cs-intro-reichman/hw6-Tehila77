@@ -120,8 +120,8 @@ public class Runigram {
 	public static Color[][] grayScaled(Color[][] image) {
 		Color [][] grayVarision= new Color[image.length][image[0].length];
 		for(int i=0;i<grayVarision.length;i++){
-			for (int j=0;j < image[0].length;j++){
-			grayVarision[i][j]= luminance(grayVarision[i][j]);
+			for (int j=0;j <grayVarision[0].length;j++){
+			grayVarision[i][j]= luminance(image[i][j]);
 			}	
 			}
 			return grayVarision;
